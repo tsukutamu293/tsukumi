@@ -1,0 +1,76 @@
+{
+  "name": "つくみ",
+  "nameEn": "TSUKUMI",
+  "bio": "",
+  "groups": [
+    {
+      "ja": "学業",
+      "en": "EDUCATION",
+      "items": [
+        {
+          "title": "早稲田大学法学部",
+          "period": "",
+          "detail": ""
+        },
+        {
+          "title": "社会保障法ゼミ",
+          "period": "",
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "ja": "音楽",
+      "en": "MUSIC",
+      "items": [
+        {
+          "title": "アコースティックバンドサークルでの活動",
+          "period": "",
+          "detail": ""
+        },
+        {
+          "title": "オリジナルバンドサークルでの作詞・作曲・ボーカル活動",
+          "period": "",
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "ja": "写真",
+      "en": "PHOTOGRAPHY",
+      "items": [
+        {
+          "title": "写真サークルでの活動",
+          "period": "",
+          "detail": ""
+        },
+        {
+          "title": "セルフポートレート作品制作",
+          "period": "",
+          "detail": ""
+        },
+        {
+          "title": "イベント・ライブ撮影",
+          "period": "",
+          "detail": ""
+        }
+      ]
+    },
+    {
+      "ja": "仕事・活動",
+      "en": "WORK",
+      "items": [
+        {
+          "title": "不登校支援塾での活動",
+          "period": "",
+          "detail": ""
+        },
+        {
+          "title": "アパレル販売・接客業務",
+          "period": "",
+          "detail": ""
+        }
+      ]
+    }
+  ]
+}

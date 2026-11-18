@@ -1,0 +1,57 @@
+{
+  "galleryFrame": "solid",
+  "intro": "写真を通じて、自分に見えている世界を伝える。\n\n人や音楽、ファッション、イベント。\nその魅力に目が留まるように、写真で届ける。",
+  "noteLink": {
+    "label": "写真について読む",
+    "title": "カメラ初心者の私が、なぜ変な写真を撮るのか？について。",
+    "url": "https://note.com/tsukutsuku293/n/nd42fe010f4ea"
+  },
+  "works": [
+    {
+      "id": "fullerene",
+      "no": "001",
+      "title": "私＝フラーレン",
+      "artist": "つくみ",
+      "type": "単写",
+      "frameColor": "#8DAFBB",
+      "summary": "人は、「表裏が激しい」と云うが、私は、立体である。",
+      "statement": "人は、「表裏が激しい」と云うが、\n私は、立体である。\n\n人は「意外な一面」と云うが、\n私はサッカーボールと同じ形である。\n\n人は「ダイヤモンド」と云うが、\n私はC60である。\n\n人は「明るい」と云うが、\n私は電子親和力が高い。\n\nつまり、私はフラーレンなのである。",
+      "note": "",
+      "images": [
+        {
+          "src": "images/photography/fullerene.jpg",
+          "thumb": "images/photography/fullerene-thumb.jpg",
+          "alt": "私＝フラーレン"
+        }
+      ]
+    },
+    {
+      "id": "water-transition",
+      "no": "002",
+      "title": "水相転移",
+      "artist": "つくみ",
+      "type": "組写真（3枚）",
+      "frameColor": "#111111",
+      "summary": "状態を変え、形を変え、温度を変えても、水は、変わらず水である。",
+      "statement": "状態を変え、形を変え、温度を変えても\n水は、変わらず水である。\n私もそうである。",
+      "note": "この作品は、私の自己表現として、つくみ≒水を表現しています。\n写真で、私自身を、どのように表現し、どのように理解してもらおうかを考えて、今回はセルフポートレートに挑戦してみました。",
+      "images": [
+        {
+          "src": "images/photography/water-transition-1.jpg",
+          "thumb": "images/photography/water-transition-1-thumb.jpg",
+          "alt": "水相転移 1/3"
+        },
+        {
+          "src": "images/photography/water-transition-2.jpg",
+          "thumb": "images/photography/water-transition-2-thumb.jpg",
+          "alt": "水相転移 2/3"
+        },
+        {
+          "src": "images/photography/water-transition-3.jpg",
+          "thumb": "images/photography/water-transition-3-thumb.jpg",
+          "alt": "水相転移 3/3"
+        }
+      ]
+    }
+  ]
+}

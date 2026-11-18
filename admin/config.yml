@@ -1,0 +1,228 @@
+# =====================================================================
+#  つくみ / TSUKUMI — 編集画面の設定
+#  repo は GitHub の「ユーザー名/リポジトリ名」です（設定済み）
+#
+# =====================================================================
+backend:
+  name: github
+  repo: tsukutamu293/tsukumi
+  branch: main
+  commit_messages:
+    update: "{{collection}} を更新"
+    uploadMedia: "画像 {{path}} を追加"
+
+locale: ja
+media_folder: images/photography
+public_folder: images/photography
+
+collections:
+  # -------------------------------------------------------------------
+  - name: settings
+    label: サイト全体・トップ・お問い合わせ
+    editor: { preview: false }
+    files:
+      - name: site
+        label: サイト全体・トップ・お問い合わせ
+        file: content/site.json
+        format: json
+        fields:
+          - { name: name, label: サイト名（日本語）, widget: string }
+          - { name: nameEn, label: サイト名（英語）, widget: string }
+          - { name: catch, label: キャッチコピー, widget: string }
+          - { name: concept, label: コンセプト（英語・2行）, widget: list, field: { name: line, label: 行, widget: string } }
+          - { name: description, label: 検索結果に出る説明文, widget: text }
+          - name: categories
+            label: トップのカテゴリカード
+            widget: list
+            allow_add: false
+            summary: "{{fields.ja}}"
+            fields:
+              - { name: no, label: 番号, widget: string }
+              - { name: ja, label: 日本語タイトル, widget: string }
+              - { name: en, label: 英語サブタイトル, widget: string }
+              - { name: href, label: リンク先（通常は変更不要）, widget: string }
+              - name: tone
+                label: カードの色
+                widget: select
+                options:
+                  - { label: 白, value: light }
+                  - { label: 黒, value: dark }
+                  - { label: 黒＋ブルーグレーの円, value: dark-blue }
+                  - { label: ブルーグレー, value: blue }
+              - { name: text, label: 説明文（空欄なら執筆カードは作品タイトル一覧）, widget: text, required: false }
+          - name: sns
+            label: SNSリンク
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name, label: 表示名, widget: string }
+              - { name: url, label: URL, widget: string }
+              - { name: icon, label: アイコン, widget: select, options: [instagram, note], required: false }
+          - { name: contactEmail, label: お問い合わせ先メールアドレス, widget: string }
+          - { name: contactLead, label: トップの「お問い合わせ」帯の文, widget: string, required: false }
+          - { name: contactText, label: お問い合わせページの案内文, widget: text, required: false }
+          - { name: contactSubjects, label: ご用件の選択肢, widget: list, field: { name: item, label: 選択肢, widget: string } }
+          - name: nav
+            label: ナビゲーション（通常は変更不要）
+            widget: list
+            summary: "{{fields.ja}}"
+            fields:
+              - { name: ja, label: 日本語, widget: string }
+              - { name: en, label: 英語, widget: string }
+              - { name: href, label: リンク先, widget: string }
+              - { name: key, label: キー, widget: string }
+
+  # -------------------------------------------------------------------
+  - name: photography
+    label: 写真
+    editor: { preview: false }
+    files:
+      - name: photography
+        label: 写真ページ・作品
+        file: content/photography.json
+        format: json
+        fields:
+          - name: galleryFrame
+            label: 一覧の画像枠
+            widget: select
+            options:
+              - { label: ベタ塗り, value: solid }
+              - { label: 写真を表示, value: photo }
+          - { name: intro, label: 写真ページの説明文, widget: text }
+          - name: noteLink
+            label: 写真について書いたnote記事
+            widget: object
+            fields:
+              - { name: label, label: リンクの文字, widget: string }
+              - { name: title, label: 記事タイトル, widget: string }
+              - { name: url, label: URL, widget: string }
+          - name: works
+            label: 作品（上から順に表示）
+            label_singular: 作品
+            widget: list
+            summary: "{{fields.no}}｜{{fields.title}}"
+            fields:
+              - { name: id, label: "ID（半角英数字とハイフン。URLになります）", widget: string, pattern: ["^[a-z0-9-]+$", "半角の英小文字・数字・ハイフンで入力してください"] }
+              - { name: no, label: 番号（例：003）, widget: string }
+              - { name: title, label: 作品名, widget: string }
+              - { name: artist, label: 作家名, widget: string, default: つくみ }
+              - { name: type, label: 形式（例：単写／組写真（3枚））, widget: string, required: false }
+              - { name: frameColor, label: "一覧のベタ塗りの色（#8DAFBB／#111111 など）", widget: string, default: "#8DAFBB" }
+              - { name: summary, label: 一覧に出る短い説明, widget: text, required: false }
+              - { name: statement, label: 作品ステートメント, widget: text }
+              - { name: note, label: 追加説明, widget: text, required: false }
+              - name: images
+                label: 写真（組写真は複数追加）
+                label_singular: 写真
+                widget: list
+                summary: "{{fields.alt}}"
+                fields:
+                  - { name: src, label: 写真, widget: image }
+                  - { name: thumb, label: 一覧用の小さい写真（任意）, widget: image, required: false }
+                  - { name: alt, label: 写真の説明（読み上げ用）, widget: string }
+
+  # -------------------------------------------------------------------
+  - name: articles
+    label: 記事
+    editor: { preview: false }
+    files:
+      - name: articles
+        label: 記事一覧
+        file: content/articles.json
+        format: json
+        fields:
+          - name: items
+            label: 記事（上にあるものほど上に表示）
+            label_singular: 記事
+            widget: list
+            add_to_top: true
+            summary: "{{fields.title}}{{fields.label}}"
+            fields:
+              - { name: title, label: タイトル, widget: string, required: false }
+              - { name: label, label: タイトル未入力のときの仮の名前, widget: string, required: false }
+              - { name: description, label: 短い説明, widget: text, required: false }
+              - { name: url, label: URL, widget: string }
+              - { name: source, label: 掲載先（例：note）, widget: string, required: false }
+              - { name: date, label: 日付（例：2026.11.11）, widget: string, required: false }
+
+  # -------------------------------------------------------------------
+  - name: lyrics
+    label: 作詞
+    editor: { preview: false }
+    files:
+      - name: lyrics
+        label: 歌詞一覧
+        file: content/lyrics.json
+        format: json
+        fields:
+          - name: items
+            label: 歌詞
+            label_singular: 歌詞
+            widget: list
+            summary: "{{fields.no}}｜{{fields.title}}"
+            fields:
+              - { name: id, label: "ID（半角英数字とハイフン。URLになります）", widget: string, pattern: ["^[a-z0-9-]+$", "半角の英小文字・数字・ハイフンで入力してください"] }
+              - { name: no, label: 番号（例：004）, widget: string }
+              - { name: title, label: タイトル, widget: string }
+              - { name: keywords, label: 関連する言葉, widget: list, required: false, field: { name: word, label: 言葉, widget: string } }
+              - { name: note, label: メモ（任意）, widget: text, required: false }
+              - { name: body, label: 歌詞（改行・空白はそのまま表示されます）, widget: text }
+
+  # -------------------------------------------------------------------
+  - name: writing
+    label: 執筆
+    editor: { preview: false }
+    files:
+      - name: writing
+        label: 執筆作品
+        file: content/writing.json
+        format: json
+        fields:
+          - name: items
+            label: 作品
+            label_singular: 作品
+            widget: list
+            summary: "{{fields.title}}（{{fields.status}}）"
+            fields:
+              - { name: id, label: "ID（半角英数字とハイフン）", widget: string, pattern: ["^[a-z0-9-]+$", "半角の英小文字・数字・ハイフンで入力してください"] }
+              - { name: title, label: タイトル, widget: string }
+              - name: status
+                label: 公開状態
+                widget: select
+                default: in-progress
+                options:
+                  - { label: 制作中（本文は非公開）, value: in-progress }
+                  - { label: 公開（本文を表示）, value: published }
+              - { name: summary, label: 一覧に出る短い説明, widget: text, required: false }
+              - { name: body, label: 本文（「公開」のときだけ表示）, widget: text, required: false }
+
+  # -------------------------------------------------------------------
+  - name: profile
+    label: 経歴
+    editor: { preview: false }
+    files:
+      - name: profile
+        label: 経歴
+        file: content/profile.json
+        format: json
+        fields:
+          - { name: name, label: 名前, widget: string }
+          - { name: nameEn, label: 名前（英語）, widget: string }
+          - { name: bio, label: 自己紹介, widget: text, required: false }
+          - name: groups
+            label: 活動分野
+            label_singular: 分野
+            widget: list
+            summary: "{{fields.ja}}"
+            fields:
+              - { name: ja, label: 分野名, widget: string }
+              - { name: en, label: 分野名（英語）, widget: string }
+              - name: items
+                label: 活動
+                label_singular: 活動
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { name: title, label: 活動内容, widget: string }
+                  - { name: period, label: 時期（例：2024.04 —）, widget: string, required: false }
+                  - { name: detail, label: 詳細, widget: text, required: false }

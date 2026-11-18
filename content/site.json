@@ -1,0 +1,103 @@
+{
+  "name": "つくみ",
+  "nameEn": "TSUKUMI",
+  "catch": "書く、撮る、歌う、考える。",
+  "concept": [
+    "PERSONAL WEBSITE",
+    "CREATIVE ARCHIVE"
+  ],
+  "description": "つくみ（TSUKUMI）の個人サイト。写真、記事、作詞、執筆など、書く・撮る・歌う・考える活動をまとめたクリエイティブアーカイブ。",
+  "sns": [
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/tsukumi16/",
+      "icon": "instagram"
+    },
+    {
+      "name": "note",
+      "url": "https://note.com/tsukutsuku293",
+      "icon": "note"
+    }
+  ],
+  "nav": [
+    {
+      "ja": "ホーム",
+      "en": "HOME",
+      "href": "index.html",
+      "key": "home"
+    },
+    {
+      "ja": "写真",
+      "en": "PHOTOGRAPHY",
+      "href": "photography.html",
+      "key": "photography"
+    },
+    {
+      "ja": "記事",
+      "en": "ARTICLES",
+      "href": "articles.html",
+      "key": "articles"
+    },
+    {
+      "ja": "作詞",
+      "en": "LYRICS",
+      "href": "lyrics.html",
+      "key": "lyrics"
+    },
+    {
+      "ja": "執筆",
+      "en": "WRITING",
+      "href": "writing.html",
+      "key": "writing"
+    },
+    {
+      "ja": "経歴",
+      "en": "PROFILE",
+      "href": "profile.html",
+      "key": "profile"
+    }
+  ],
+  "categories": [
+    {
+      "no": "01",
+      "ja": "写真",
+      "en": "PHOTOGRAPHY",
+      "href": "photography.html",
+      "tone": "light",
+      "text": "セルフポートレートや\nコンセプトフォトなど、\n写真による表現。"
+    },
+    {
+      "no": "02",
+      "ja": "記事",
+      "en": "ARTICLES",
+      "href": "articles.html",
+      "tone": "dark",
+      "text": "noteなどに書いた\n記事のまとめ。"
+    },
+    {
+      "no": "03",
+      "ja": "作詞",
+      "en": "LYRICS",
+      "href": "lyrics.html",
+      "tone": "dark-blue",
+      "text": "オリジナルの歌詞。"
+    },
+    {
+      "no": "04",
+      "ja": "執筆",
+      "en": "WRITING",
+      "href": "writing.html",
+      "tone": "blue",
+      "text": ""
+    }
+  ],
+  "contactEmail": "tsukutamu293@fuji.waseda.jp",
+  "contactLead": "ご連絡はこちらから。",
+  "contactText": "ご連絡は、下のフォームまたはメールでお送りください。",
+  "contactSubjects": [
+    "お仕事のご依頼",
+    "撮影のご相談",
+    "作品へのご感想",
+    "その他"
+  ]
+}

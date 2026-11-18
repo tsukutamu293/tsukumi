@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 公開後、YOUR-SITE.vercel.app を自分のサイトのアドレスに書き換えてください -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://YOUR-SITE.vercel.app/</loc></url>
+  <url><loc>https://YOUR-SITE.vercel.app/photography.html</loc></url>
+  <url><loc>https://YOUR-SITE.vercel.app/articles.html</loc></url>
+  <url><loc>https://YOUR-SITE.vercel.app/lyrics.html</loc></url>
+  <url><loc>https://YOUR-SITE.vercel.app/writing.html</loc></url>
+  <url><loc>https://YOUR-SITE.vercel.app/profile.html</loc></url>
+  <url><loc>https://YOUR-SITE.vercel.app/contact.html</loc></url>
+  <url><loc>https://YOUR-SITE.vercel.app/work.html</loc></url>
+  <url><loc>https://YOUR-SITE.vercel.app/lyric.html</loc></url>
+</urlset>

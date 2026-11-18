@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+
+# 公開後、下の行のURLを自分のサイトのアドレスに書き換えてください
+Sitemap: https://YOUR-SITE.vercel.app/sitemap.xml
