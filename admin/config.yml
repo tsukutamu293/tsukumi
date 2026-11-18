@@ -131,6 +131,7 @@ collections:
         file: content/articles.json
         format: json
         fields:
+          - { name: intro, label: 記事ページ上部の説明文, widget: text, required: false, hint: "空欄のときは「noteや外部サイトに掲載した記事。」と表示されます" }
           - name: items
             label: 記事（上にあるものほど上に表示）
             label_singular: 記事
@@ -155,6 +156,7 @@ collections:
         file: content/lyrics.json
         format: json
         fields:
+          - { name: intro, label: 作詞ページ上部の説明文, widget: text, required: false, hint: "空欄のときは「オリジナルの歌詞。」と表示されます" }
           - name: items
             label: 歌詞
             label_singular: 歌詞
@@ -164,6 +166,7 @@ collections:
               - { name: id, label: "ID（半角英数字とハイフン。URLになります）", widget: string, pattern: ["^[a-z0-9-]+$", "半角の英小文字・数字・ハイフンで入力してください"] }
               - { name: no, label: 番号（例：004）, widget: string }
               - { name: title, label: タイトル, widget: string }
+              - { name: caption, label: キャプション（一覧と歌詞ページのタイトルの下に表示）, widget: text, required: false }
               - { name: keywords, label: 関連する言葉, widget: list, required: false, field: { name: word, label: 言葉, widget: string } }
               - { name: note, label: メモ（任意）, widget: text, required: false }
               - { name: body, label: 歌詞（改行・空白はそのまま表示されます）, widget: text }
@@ -178,6 +181,7 @@ collections:
         file: content/writing.json
         format: json
         fields:
+          - { name: intro, label: 執筆ページ上部の説明文, widget: text, required: false, hint: "空欄のときは「現在制作中の文章作品。」と表示されます" }
           - name: items
             label: 作品
             label_singular: 作品
